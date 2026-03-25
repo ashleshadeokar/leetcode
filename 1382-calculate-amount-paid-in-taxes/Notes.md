@@ -1,0 +1,1 @@
+<h2>calculate-amount-paid-in-taxes Notes</h2><hr>[ Time taken: 2d 23hrs 32m 48s ]
