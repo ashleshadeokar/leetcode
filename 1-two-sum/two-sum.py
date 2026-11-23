@@ -1,15 +1,22 @@
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
-        copy = [(num, i) for i, num in enumerate(nums)]
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
+        # for i in range(len(nums)):
+        #     for j in range(i + 1, len(nums)):
+        #         if nums[i] + nums[j] == target:
+        #             return [i, j]
+        # return []
+
+        copy = []
+        for i, num in enumerate(nums):
+            copy.append([num, i])
 
         copy.sort()
-        
-        i, j = 0, len(copy) - 1
+        i, j = 0, len(nums) - 1
         while i < j:
-            sum1 = copy[i][0] + copy[j][0]
-            if sum1 == target:
-                return sorted([copy[i][1], copy[j][1]])
-            elif sum1 < target:
+            curr_sum = copy[i][0] + copy[j][0]
+            if curr_sum == target:
+                return [min(copy[i][1], copy[j][1]), max(copy[i][1], copy[j][1])]
+            elif curr_sum < target:
                 i += 1
             else:
                 j -= 1
